@@ -1,0 +1,202 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  margin-top: 7vh;
+  
+
+}
+
+.gallery li {
+/*   overflow: hidden; */
+}
+
+.gallery li figure {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+/* Hover effect specific styles */
+
+/* Filter effect */
+
+.gallery.filter img {
+  transition: filter .3s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.gallery.filter img:hover {
+  filter: none;
+}
+
+/* Zoom in-out effect */
+.gallery.zoom li {
+  overflow: hidden;
+}
+
+.gallery.zoom img {
+  transform: scale(1);
+  transition: transform .3s ease-in-out;
+}
+
+.gallery.zoom img:hover {
+  transform: scale(1.2);
+}
+
+/* caption effect */
+
+.gallery.caption-1 figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  margin: 1rem;
+  text-align: center;
+  display: grid;
+  align-content: center;
+  opacity: 0;
+  transform: scale(.95);
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+  pointer-events: none;
+}
+
+.gallery.caption-1 figure h1 {
+  margin: 0;
+  font-size: 21px;
+  color: rgba(0, 0, 0, .75);
+}
+
+.gallery.caption-1 figure p {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(0, 0, 0, .4);
+}
+
+.gallery.caption-1 figure:hover figcaption {
+  opacity: .9;
+  transform: scale(1)
+}
+
+/* caption 2 */
+
+.gallery.caption-2 img {
+  filter: invert(25%);
+  transform: scale(1.2);
+  transition: all .3s ease-in-out;
+}
+
+.gallery.caption-2 figure {
+  overflow: hidden;
+}
+
+.gallery.caption-2 figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: end;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+  padding-left: 2rem;
+  transform: translate3d(0, 1rem, 0);
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+  pointer-event: none;
+}
+
+.gallery.caption-2 figure h1 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.gallery.caption-2 figure p {
+  font-size: 13px;
+  margin-bottom: 2rem;
+}
+
+.gallery.caption-2 figure:hover img {
+  filter: none;
+  transform: scale(1);
+}
+
+.gallery.caption-2 figure:hover figcaption {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Caption 3 */
+.gallery.caption-3 li figure {
+  overflow: hidden;
+}
+
+.gallery.caption-3 li img {
+  transform: scale(1.2);
+  transition: transform .3s ease-in-out;
+}
+
+.gallery.caption-3 figure figcaption {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+  transform: scale(1.2);
+  transotion: all .3s ease-in-out;
+  pointer-event: none;
+}
+
+.gallery.caption-3 figure h1,
+.gallery.caption-3 figure p {
+  opacity: 0;
+  transition: all .4s;
+}
+
+.gallery.caption-3 figure h1 {
+  margin: 0;
+  font-size: 21px;
+  transform: translate3d(0, -1rem, 0);
+}
+
+.gallery.caption-3 figure p {
+  font-size: 13px;
+  transform: translate3d(0, 1rem, 0);
+}
+
+.gallery.caption-3 figure:hover img {
+  filter: grayscale(100%);
+  transform: scale(1);
+}
+
+.gallery.caption-3 figure:hover figcaption {
+  transform: scale(1);
+}
+
+.gallery.caption-3 figure:hover h1,
+.gallery.caption-3 figure:hover p {
+  opacity: 1;
+  transform: scale(1);
+}
