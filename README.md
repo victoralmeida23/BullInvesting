@@ -1,8 +1,7 @@
 # BullInvesting
-TCC
 
-Para o desenvolvimento deste site utilizei as seguintes tecnologias:
+Para o desenvolvimento deste trabalho de conclusão de curso utilizei as seguintes tecnologias:
 
-HTML;
-CSS;
-JavaScript;
+- HTML;
+- CSS;
+- JavaScript;
